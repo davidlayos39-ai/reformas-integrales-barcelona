@@ -1,0 +1,775 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+html{scroll-behavior:smooth;}
+section[id]{scroll-margin-top:84px;}
+.nav-active{color:var(--tw-color-on-tertiary-container,#f78b30);}
+.rbcn-modal-overlay{position:fixed;inset:0;background:rgba(22,40,57,0.6);backdrop-filter:blur(3px);z-index:100;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px;}
+.rbcn-modal-overlay.open{display:flex;}
+.rbcn-modal{background:#fff;max-width:640px;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.25);animation:rbcnFadeUp .25s ease;}
+@keyframes rbcnFadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.rbcn-price-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e2e2e2;font-size:14px;}
+.rbcn-price-row:last-child{border-bottom:none;}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-container":"#6b6360","on-secondary":"#ffffff","primary-fixed-dim":"#b5c8df","outline":"#74777d","on-surface-variant":"#43474c","error":"#ba1a1a","on-primary-fixed-variant":"#36485b","on-primary-fixed":"#091d2e","on-tertiary-container":"#f78b30","secondary":"#655d5a","surface-container-highest":"#e2e2e2","inverse-on-surface":"#f0f1f1","surface-bright":"#f9f9f9","background":"#f9f9f9","on-error-container":"#93000a","surface":"#f9f9f9","primary-fixed":"#d1e4fb","on-tertiary":"#ffffff","surface-dim":"#dadada","primary":"#162839","tertiary":"#411d00","surface-tint":"#4e6073","surface-container-low":"#f3f3f4","surface-container":"#eeeeee","primary-container":"#2c3e50","on-secondary-fixed-variant":"#4c4542","on-primary-container":"#96a9be","on-tertiary-fixed-variant":"#713700","surface-container-lowest":"#ffffff","secondary-fixed":"#ece0dc","error-container":"#ffdad6","outline-variant":"#c4c6cd","secondary-fixed-dim":"#cfc4c0","on-surface":"#1a1c1c","on-primary":"#ffffff","on-secondary-fixed":"#201a18","tertiary-fixed-dim":"#ffb783","on-background":"#1a1c1c","tertiary-fixed":"#ffdcc5","on-tertiary-fixed":"#301400","inverse-primary":"#b5c8df","on-error":"#ffffff","surface-variant":"#e2e2e2","surface-container-high":"#e8e8e8","secondary-container":"#ece0dc","inverse-surface":"#2f3131","tertiary-container":"#612f00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"64px","margin-mobile":"20px","container-max":"1280px","gutter":"24px","unit":"8px"},"fontFamily":{"headline-lg-mobile":["Montserrat"],"headline-xl":["Montserrat"],"label-sm":["Inter"],"headline-lg":["Montserrat"],"body-md":["Inter"],"headline-md":["Montserrat"],"body-lg":["Inter"]},"fontSize":{"headline-lg-mobile":["28px",{"lineHeight":"34px","fontWeight":"600"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-background font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_12px_rgba(44,62,80,0.06)]"><div class="h-20 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-unit"><img alt="Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9TV93JsvCiFYlp_swu6Abu8sLhhUz23AS5lUoP8txpIwVNSdawVZmuzVO8T6nJXnhScN9BD1Ib1IKZN_lfMHE-uY2IOsi9NmEGCZXAd3KZsxhJyxduu4KLh0ImodVevQgLA2HlOKKgBbA6YTjG76L5n4pnvRnCS90vHPvrH6IkNLDsS1OtmW8tm5NiBWCPClpXDSn_ridCtsT6DWyj2cyPRlATNdCXyxhLh-meONoz8wTi_IXGH12tpaffU86-RBf5_OENRRBKqzvAw"><span class="font-headline-md text-headline-md text-primary tracking-tight uppercase">Renova BCN</span></div><nav class="hidden xl:flex items-center gap-gutter" data-active-classes="text-on-tertiary-container font-semibold underline underline-offset-8"><a aria-current="page" class="transition-all uppercase text-on-tertiary-container font-semibold underline underline-offset-8" data-path="inicio" href="#inicio">Inicio</a><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all uppercase" data-path="servicios" href="#servicios">Servicios</a><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all uppercase" data-path="proyectos" href="#proyectos">Proyectos</a><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all uppercase" data-path="opiniones" href="#opiniones">Opiniones</a><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all uppercase" data-path="contacto" href="#contacto">Contacto</a></nav><div class="flex items-center gap-gutter"><div class="hidden md:flex flex-col items-end"><span class="text-label-sm font-label-sm text-on-surface-variant">Llámanos</span><span class="font-headline-md text-primary">+34 932 456 789</span></div><a class="bg-on-tertiary-container text-on-tertiary px-6 py-3 rounded-full flex items-center gap-2 hover:opacity-90 transition-all shadow-md" href="https://wa.me/34600000000"><span class="material-symbols-outlined">chat</span><span class="font-label-sm text-label-sm">WhatsApp</span></a><div class="flex md:hidden"><img alt="Profile" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfuxdIPEtAr6AMx8QZT-ozw0QLWpassIxGrN91KvdnzPhw2N9VbsKTLpcOIxSTWvJvnGrz0bB-bKd2u0pmPAx6aaBBdQprZ1Hz3RA94SQMoL6cnDltSARP23LpQ2uSPMc9P1CXCrqni6l2OpGnI4cwWWxI-xu1Z1LPv4hWr8BMubYW-prxVvVEkfvLgMstjmdLPqBCa-7wY7zwIkRmaGgrMqMaPfjwUXnmpwHY98MRBfuF9MZtao6i"></div><div class="hidden md:block"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfuxdIPEtAr6AMx8QZT-ozw0QLWpassIxGrN91KvdnzPhw2N9VbsKTLpcOIxSTWvJvnGrz0bB-bKd2u0pmPAx6aaBBdQprZ1Hz3RA94SQMoL6cnDltSARP23LpQ2uSPMc9P1CXCrqni6l2OpGnI4cwWWxI-xu1Z1LPv4hWr8BMubYW-prxVvVEkfvLgMstjmdLPqBCa-7wY7zwIkRmaGgrMqMaPfjwUXnmpwHY98MRBfuF9MZtao6i"></div></div></div></header><main class="w-full pt-20"><div class="flex flex-col w-full relative">
+<!-- 1. Hero Section -->
+<section class="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center -mt-20 overflow-hidden" id="inicio">
+<!-- Background Image with Scrim -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="A stunning, modern renovated living room in Barcelona. High ceilings with restored Catalan vaulting (volta catalana). Sunlight streams through large windows onto a polished concrete floor. Minimalist mid-century modern furniture, a warm oak accent wall, and a large indoor plant. Professional architectural photography, high-end, bright, aspirational, neutral palette with warm wood tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJfTsb71HOPxwMdgWFH6lAI_MwNw6z3V2TeLua9HwsiDiMOJl8NT757X5sg1W_JflCtcunewnbonkBY655U54nVnXYzOp7d4ZfPCxnreIweo4w7NR4n19Gp_7_Y2MAVmgNffYjQ8w5rUA5Uyulw5c1Kp-pAntBrkHbndXT9GwVD0IUwquKMisC5wVdi0jNaoSGjd4Y_PViuXZauJ1q2IGHqplyKlgZLcjLYcNpA-i6Nej_BbSFiwtR')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/95 via-surface/80 to-transparent"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop pt-20">
+<div class="max-w-2xl flex flex-col items-start gap-6 animate-fade-in-up">
+<span class="text-label-sm font-label-sm text-on-tertiary-container uppercase tracking-wider bg-tertiary-container/10 px-3 py-1 rounded-full backdrop-blur-sm shadow-sm">
+          Arquitectura &amp; Diseño
+        </span>
+<h1 class="text-headline-xl font-headline-xl text-on-surface leading-tight">
+          Reformas Integrales de Calidad en Barcelona
+        </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+          Transformamos tu hogar con profesionalidad, transparencia y acabados de lujo. Combinamos la esencia del diseño mediterráneo con técnica constructiva impecable.
+        </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<a class="bg-on-tertiary-container text-on-tertiary px-8 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-wider hover:bg-tertiary-container hover:text-on-tertiary-container transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-block text-center" href="#contacto">
+            Pide presupuesto gratis
+          </a>
+<a class="border border-primary-container text-primary-container px-8 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-wider hover:bg-primary-container hover:text-on-primary transition-all flex items-center justify-center gap-2" href="tel:+34932456789">
+<span class="material-symbols-outlined">call</span>
+            Llamar ahora
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Confidence Bar -->
+<section class="w-full bg-surface-container relative z-20">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop py-8 md:py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x divide-outline-variant/30">
+<div class="flex flex-col items-center text-center gap-3 px-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-2">
+<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary-container">15+</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Años de experiencia</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3 px-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-2">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary-container">500+</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Reformas realizadas</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3 px-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-2">
+<span class="material-symbols-outlined text-2xl">contract</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary-container">100%</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Garantía por escrito</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3 px-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-2">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary-container">0%</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Financiación sin interés</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Services -->
+<section class="w-full py-24 bg-surface" id="servicios">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="text-label-sm font-label-sm text-on-tertiary-container uppercase tracking-widest mb-4 block">Especialidades</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mb-6">Nuestros Servicios</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+            Dominamos cada disciplina del proceso constructivo. Desde pequeñas actualizaciones hasta rehabilitaciones integrales, aplicamos el mismo rigor y pasión por el detalle.
+          </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 1 -->
+<a class="group block relative overflow-hidden bg-surface-container rounded-xl aspect-[4/3] flex flex-col justify-end p-8 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer" href="javascript:void(0)" onclick="openServiceModal('banos')">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a luxurious modern bathroom in Barcelona. Slate tiles, a frameless glass walk-in shower, matte black fixtures, and a floating oak vanity. Warm, sophisticated lighting. Architectural photography, soft shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2hCJVKN6EgpCvlQrAcA3rMDR-uuuIJJhrIWdY6LaydCDl429gypE-m0w4So6Vyl-dRjW-YyQRGECRQCOFeNV4D7fxPhvS2PIGEBhMTn7JJaVBqb1e8aYR-B4Do8R6RAl1pjTb74WfQbTiUniIwFK_pBu16Sl_iD72AeVZf9QWAvBNW4doMD4GRjU4PAjJ4-TOI49zN6Tj_BEFYop9IYZMGz4HOH42WaB1E4gChqq81CGhtucmK-8I')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<div class="w-12 h-12 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary">bathtub</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Reformas de baños</h3>
+<div class="flex items-center gap-2 text-label-sm font-label-sm uppercase tracking-wider text-on-primary/80 group-hover:text-on-tertiary-container transition-colors">
+<span class="">Ver más</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Service 2 -->
+<a class="group block relative overflow-hidden bg-surface-container rounded-xl aspect-[4/3] flex flex-col justify-end p-8 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer" href="javascript:void(0)" onclick="openServiceModal('cocinas')">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, high-end minimalist kitchen renovation. White handleless cabinets, a large Calacatta marble island with brass pendants above. Built-in appliances. Bright daylight from a nearby window. Modern Barcelona style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnuPkFoZWpaUvfVhbzshsV-bZL9Sqm_xv3D_OImkbAVXan4DW-DcPXgFDVG8L_eLP_NRIxwywPpd4FLcE6CCxMSakXszRCgsuCBN7PKXVp5lJBn9oA-N4ppbbU51UBk-zRu3KdG_NtTrCf3z9r015LeK_caqJVy6xDvkPOhZzMMEqRZm3WSz4faOeozXFfyuOQLsXWf74PnV0BZ-9pAspSi_l_POYfb0aylab066meaCLk3NyMdywT')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<div class="w-12 h-12 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary">kitchen</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Cocinas</h3>
+<div class="flex items-center gap-2 text-label-sm font-label-sm uppercase tracking-wider text-on-primary/80 group-hover:text-on-tertiary-container transition-colors">
+<span class="">Ver más</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Service 3 -->
+<a class="group block relative overflow-hidden bg-surface-container rounded-xl aspect-[4/3] flex flex-col justify-end p-8 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer" href="javascript:void(0)" onclick="openServiceModal('viviendas')">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully renovated living space connecting to a terrace in a Barcelona Eixample apartment. Hydraulic floor tiles (baldosa hidráulica), high ceilings, large French doors letting in Mediterranean sunlight. Modern classic mix." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2AcJd04eSisq8Pi7FyEvk3OaZX0MrA13Mp2h4NM3-Pke9vmSAe7b7ZoaDfT2t9uG39vRYv01P7A8LbMLe6eR1kzD5_SaYDlPQxZNTXq7dVBPL39kxprX15KeG9K7cv1_HT7oPL6ABYVXd-uqaKK0cfEMvp-N1JbqnnJLNB_oKSaCFz9DcDk2Lgni-jJMj0lRrMq5_oNCsUVipSrgyaZR7v8oD0SZERFDB-IdTdU-0dOQMO2uOzH1I')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<div class="w-12 h-12 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary">home</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Viviendas</h3>
+<div class="flex items-center gap-2 text-label-sm font-label-sm uppercase tracking-wider text-on-primary/80 group-hover:text-on-tertiary-container transition-colors">
+<span class="">Ver más</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Service 4 -->
+<a class="group block relative overflow-hidden bg-surface-container rounded-xl aspect-[4/3] flex flex-col justify-end p-8 shadow-sm hover:shadow-xl transition-all duration-500 lg:col-span-2 cursor-pointer" href="javascript:void(0)" onclick="openServiceModal('locales')">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A trendy commercial space renovation in Barcelona, perhaps a boutique coffee shop or retail store. Exposed brick walls, micro-cement flooring, custom metal shelving, warm track lighting. Professional, architectural." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZOy8NO8w7M05QcMxNTBfipJaRI2rcfDUqTtXpCwxaLHsMvU_iJQM_sTpcciW43T00DB79pj-lJ4qE71F133agwv_IKC_CMQ0rv619HCj3BzNbRtaZXXifD2k2fbc7ztNFmH3WWxnLuXwAIRwe0hTVWN8hcVnVKjZC1bvx9VaYZGVC_cfk8da5Qif8wnYL-WJ3TLF3ms5b8r2qTIIp-1s1yWUbH7ljoDr5-pOJPCvJox65Qz8-HPE7')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<div class="w-12 h-12 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary">storefront</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Locales comerciales</h3>
+<div class="flex items-center gap-2 text-label-sm font-label-sm uppercase tracking-wider text-on-primary/80 group-hover:text-on-tertiary-container transition-colors">
+<span class="">Ver más</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Service 5 -->
+<a class="group block relative overflow-hidden bg-surface-container rounded-xl aspect-[4/3] flex flex-col justify-end p-8 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer" href="javascript:void(0)" onclick="openServiceModal('rehabilitaciones')">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Exterior shot of a classic Barcelona building facade being restored. Scaffolding is visible but neat. The focus is on the intricate stone details and wrought iron balconies being carefully refurbished. Daylight, blue sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAixl3tI2_delviZ0TFWmZEEDqZZpmSuTMLowHT54ER45m3Fm1SGW0xxrfRmnd35626u1XuYKt7sdswLVgL5mEh50sa5H1gVzaRhQp-S9jsoPC_DQbHUASLKmwnXBN8ilk-MKcKe5Ng8IwA2AnOiLhLNAPUDGQVM3x9u_3nn3IE85YBbEvZDAjUlW40xDSiJs3G21nWe79z5S93d3ql38suAjMJKnDVOWUgfXgaTGG4ZwRziBtAxYkl')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<div class="w-12 h-12 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary">architecture</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Rehabilitaciones</h3>
+<div class="flex items-center gap-2 text-label-sm font-label-sm uppercase tracking-wider text-on-primary/80 group-hover:text-on-tertiary-container transition-colors">
+<span class="">Ver más</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- 4. Gallery (Before/After) -->
+<section class="w-full py-24 bg-surface-container-low overflow-hidden" id="proyectos">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop mb-16">
+<div class="flex flex-col items-center text-center">
+<span class="text-label-sm font-label-sm text-on-tertiary-container uppercase tracking-widest mb-4 block">Portafolio</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mb-6">Transformaciones que inspiran</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+          Explora la evolución de nuestros proyectos. Desde el estado original hasta la entrega final, el cambio es radical, pero siempre respetando el alma del espacio.
+        </p>
+</div>
+</div>
+<!-- Gallery Grid with Asymmetry -->
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-y-24 items-center">
+<!-- Project 1 -->
+<div class="md:col-span-5 md:col-start-1 relative">
+<div class="absolute -top-4 -left-4 md:-left-8 text-[120px] font-headline-xl font-bold text-surface-container-highest/50 z-0 leading-none select-none">01</div>
+<div class="relative z-10 bg-surface p-6 md:p-10 shadow-lg rounded-xl flex flex-col gap-4">
+<h3 class="text-headline-md font-headline-md text-on-surface">Ático en L'Eixample</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Reforma integral maximizando la luz natural y recuperando elementos arquitectónicos originales.</p>
+<button class="flex items-center gap-4 mt-2 cursor-pointer text-left" onclick="openProjectModal('atico-eixample')" type="button">
+<span class="text-label-sm font-label-sm uppercase text-on-tertiary-container">Ver proyecto completo</span>
+<span class="material-symbols-outlined text-on-tertiary-container">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col sm:flex-row gap-4 relative">
+<div class="w-full aspect-square sm:aspect-[3/4] relative rounded-xl overflow-hidden shadow-md">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Before picture of a dark, outdated apartment room with old wallpaper, a small window, and worn wooden floors. Gloomy lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmx1-BOFNCH9o0acw1YCsp3ex4B24cDCA13stCMw6mVwHFc60BCNgoYV06vBUjgovSff4UxkXGarHols976ku9pDmhXd_oXEnC8vFRYiL5JF9ISmd8XgwzYokvJYyEYeuQ5qVvtD3gAgj3N0xjEf-hUSUNhDM3DeK8e--wN32hyEcKcsBZa5VjzY5fTZEVdAQXoxnB1ov1nqmuu_zUVmL23ylsC2pud0GA0m0xfNnoCdEpKundrEre">
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-label-sm font-label-sm uppercase shadow-sm">Antes</div>
+</div>
+<div class="w-full aspect-square sm:aspect-[3/4] relative rounded-xl overflow-hidden shadow-md sm:-mt-12">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="After picture of the same apartment room, now bright and modern. White walls, restored original wooden floors, large opened windows, a sleek modern sofa, and contemporary art. Sunlit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf5OqZS9ZTZSb_jwsgIL49pVdaxOBFZiaVAErtnrdmDMZ8ILuHTRyh6QlZvGkEwC7M4RS6x-slx3M87yWdJvpZ5tBVwHpCSsvjRcZllVSfMD31q_l0FXiBAbnFuowUT5_zQGP7bA0Ux9cOqz92K1daKsdJIC-frdB8kYwfEIBCx5_9xw5rJ21XxRgfEp7ZEy-zCeQuM6s_eWiC0ZLNwQJPxCs5R6ulPl41CAYlhZ_ip74OD8i41A5P">
+<div class="absolute top-4 left-4 bg-on-tertiary-container text-on-tertiary px-3 py-1 rounded-full text-label-sm font-label-sm uppercase shadow-sm">Después</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="md:col-span-5 md:col-start-8 relative order-1 md:order-2">
+<div class="absolute -top-4 -right-4 md:-right-8 text-[120px] font-headline-xl font-bold text-surface-container-highest/50 z-0 leading-none select-none">02</div>
+<div class="relative z-10 bg-surface p-6 md:p-10 shadow-lg rounded-xl flex flex-col gap-4 text-left md:text-right">
+<h3 class="text-headline-md font-headline-md text-on-surface">Baño Spa Sarrià</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Conversión de un baño antiguo en un oasis de relajación con microcemento y grifería empotrada.</p>
+<button class="flex items-center justify-start md:justify-end gap-4 mt-2 cursor-pointer w-full" onclick="openProjectModal('bano-sarria')" type="button">
+<span class="text-label-sm font-label-sm uppercase text-on-tertiary-container">Ver proyecto completo</span>
+<span class="material-symbols-outlined text-on-tertiary-container">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col sm:flex-row gap-4 relative order-2 md:order-1">
+<div class="w-full aspect-square sm:aspect-[3/4] relative rounded-xl overflow-hidden shadow-md sm:-mt-12">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="After picture of a luxurious modern spa-like bathroom. Micro-cement walls, a large freestanding soaking tub, ambient warm LED strip lighting, minimal matte brass fixtures. Elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Qxy3uNIUN0SrXjiDXy8wD2piOOJp31amiENzsHRzQEBzDWDWmQMi-gm7QwK4rvIjO7e2nBzJhGQWoFSreqopqSg_hlgXjdPT5uoL-kmQZ-qtSMdgELISgmM2yQXXIJhqzZIqbxUHJfzp7gBTuNTNQg6er8-1o1rK4AvSbU9G9lNK5Rmht5z_hIcoDETb1ohmmy-mZJzKUgr4-qnvBgjNYCBw8UlImdyo5jOpqlRIh9U1HWLegYIt">
+<div class="absolute top-4 left-4 bg-on-tertiary-container text-on-tertiary px-3 py-1 rounded-full text-label-sm font-label-sm uppercase shadow-sm">Después</div>
+</div>
+<div class="w-full aspect-square sm:aspect-[3/4] relative rounded-xl overflow-hidden shadow-md">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Before picture of an old, cramped 1980s bathroom. Pink tiles, a small dirty bathtub, poor fluorescent lighting. Dated and narrow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqX3RZa5XHdH43Wd0S9LLpqUJItg69zCbvuZV0NjodS8D1WImIQ3jv8Dr5Aa4TValn17m47ihZJd5brs06N3llsopRrTuqXOVuYADr1PrZ82QaA_AXQM5O0xe2v7RxF2MgJ3IuGxb_nqzvl-R3O65jSQU0UTSJq94EDwdq1aXRd6INpryZvoJUT9o_uQQ6pu_zcndAqFjNjvlwd76MZmEOQTxQh8gL1-mHVxnRErDiF7W8PYVKBUgq">
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-label-sm font-label-sm uppercase shadow-sm">Antes</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. How we work -->
+<section class="w-full py-24 bg-primary-container text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="text-center mb-16">
+<span class="text-label-sm font-label-sm text-on-primary-container uppercase tracking-widest mb-4 block">Metodología</span>
+<h2 class="text-headline-xl font-headline-xl mb-6">El proceso Renova</h2>
+<p class="text-body-lg font-body-lg text-on-primary/80 max-w-2xl mx-auto">
+          Un flujo de trabajo optimizado para garantizar tranquilidad, cumplimiento de plazos y resultados excepcionales.
+        </p>
+</div>
+<div class="relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-outline-variant/30"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center relative group">
+<div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6 shadow-xl border-4 border-primary-container transition-transform group-hover:scale-110">
+<span class="text-headline-xl font-headline-xl text-on-tertiary-container opacity-50 absolute pointer-events-none -mt-4">1</span>
+<span class="material-symbols-outlined text-3xl text-on-primary relative z-10">forum</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-3">Contacto y visita</h4>
+<p class="text-body-md font-body-md text-on-primary/70">Escuchamos tus ideas y realizamos una visita técnica para evaluar el espacio.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center relative group">
+<div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6 shadow-xl border-4 border-primary-container transition-transform group-hover:scale-110">
+<span class="text-headline-xl font-headline-xl text-on-tertiary-container opacity-50 absolute pointer-events-none -mt-4">2</span>
+<span class="material-symbols-outlined text-3xl text-on-primary relative z-10">request_quote</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-3">Presupuesto</h4>
+<p class="text-body-md font-body-md text-on-primary/70">Propuesta detallada sin compromiso, especificando materiales y plazos reales.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center relative group">
+<div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6 shadow-xl border-4 border-primary-container transition-transform group-hover:scale-110">
+<span class="text-headline-xl font-headline-xl text-on-tertiary-container opacity-50 absolute pointer-events-none -mt-4">3</span>
+<span class="material-symbols-outlined text-3xl text-on-primary relative z-10">handyman</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-3">Ejecución</h4>
+<p class="text-body-md font-body-md text-on-primary/70">Gestión integral de la obra con equipo propio y supervisión diaria.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center relative group">
+<div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6 shadow-xl border-4 border-primary-container transition-transform group-hover:scale-110">
+<span class="text-headline-xl font-headline-xl text-on-tertiary-container opacity-50 absolute pointer-events-none -mt-4">4</span>
+<span class="material-symbols-outlined text-3xl text-on-primary relative z-10">task_alt</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-3">Entrega</h4>
+<p class="text-body-md font-body-md text-on-primary/70">Revisión exhaustiva, limpieza final y entrega de llaves con garantías.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Testimonials -->
+<section class="w-full py-24 bg-surface" id="opiniones">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="text-label-sm font-label-sm text-on-tertiary-container uppercase tracking-widest mb-4 block">Testimonios</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mb-6">Lo que dicen nuestros clientes</h2>
+</div>
+<div class="flex gap-2">
+<button aria-label="Previous" class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button aria-label="Next" class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-1 text-on-tertiary-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface mb-8 italic">
+            "Reforma integral de mi piso en Gracia. Cumplieron con los plazos exactos y el presupuesto inicial. La calidad de los acabados es espectacular. Muy recomendables."
+          </p>
+<div class="flex items-center gap-4">
+<img alt="Avatar Marc" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfuxdIPEtAr6AMx8QZT-ozw0QLWpassIxGrN91KvdnzPhw2N9VbsKTLpcOIxSTWvJvnGrz0bB-bKd2u0pmPAx6aaBBdQprZ1Hz3RA94SQMoL6cnDltSARP23LpQ2uSPMc9P1CXCrqni6l2OpGnI4cwWWxI-xu1Z1LPv4hWr8BMubYW-prxVvVEkfvLgMstjmdLPqBCa-7wY7zwIkRmaGgrMqMaPfjwUXnmpwHY98MRBfuF9MZtao6i">
+<div>
+<p class="font-headline-md text-sm text-on-surface font-semibold">Marc Villanueva</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Reforma Integral, Gràcia</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-1 text-on-tertiary-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface mb-8 italic">
+            "Transformaron nuestra vieja cocina en el centro neurálgico de la casa. El equipo fue muy profesional, limpio y aportaron ideas de diseño que no habíamos pensado."
+          </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">
+              LA
+            </div>
+<div>
+<p class="font-headline-md text-sm text-on-surface font-semibold">Laura y Antonio</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Reforma de Cocina, Poblenou</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-1 text-on-tertiary-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface mb-8 italic">
+            "Seriedad desde el primer día. Lo que más valoré fue la comunicación constante durante la obra; siempre sabíamos en qué fase estábamos. Un 10 en gestión."
+          </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Professional headshot of a woman in her 40s, smiling naturally, outdoor soft daylight background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJIkCp4dnW7KequnxXxAIjgyh3bl-PhO34JpNOVAlfL9origoGUKn10zDoAYRBTGcTc_Xfi_ABUbhpybuYLX2_3cNTk2qzFLQ-L5EGwqtsJnvW2rDiPNQUeGsLcd2owBwZYgakYu-ZYWRZMsYurpr8egF3BjmhCYu405DB7p800ir_Ru2bKeVWZ_x1qu23BY27F7CSMAwcbZVvmb3t5aRvOChjceWdtcPPVLpRulVycX7rXAqT-1ax">
+<div>
+<p class="font-headline-md text-sm text-on-surface font-semibold">Elena Rodríguez</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Reforma de Baños, Sant Gervasi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Pricing -->
+<section class="w-full py-24 bg-secondary-container/30">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="text-center mb-16">
+<span class="text-label-sm font-label-sm text-on-tertiary-container uppercase tracking-widest mb-4 block">Inversión</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mb-6">Presupuestos Orientativos</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Transparencia desde el principio. Te mostramos rangos de precios basados en proyectos estándar para que puedas planificar tu reforma.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Tier 1 -->
+<div class="bg-surface rounded-2xl p-8 shadow-sm flex flex-col relative border border-outline-variant/20">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Baño Completo</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Reforma estándar de hasta 5m²</p>
+<div class="mb-8 flex items-baseline gap-2">
+<span class="text-body-lg text-on-surface-variant">Desde</span>
+<span class="text-headline-xl font-headline-xl font-bold text-primary-container">4.500€</span>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Demolición y desescombro</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Instalaciones de agua y luz nuevas</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Plato de ducha resina y mampara</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Revestimientos cerámicos</span>
+</li>
+</ul>
+<button class="w-full border-2 border-primary-container text-primary-container py-3 rounded-full font-label-sm text-label-sm uppercase hover:bg-primary-container hover:text-on-primary transition-colors">
+            Solicitar presupuesto
+          </button>
+</div>
+<!-- Tier 2 (Highlighted) -->
+<div class="bg-primary-container text-on-primary rounded-2xl p-8 shadow-xl flex flex-col relative transform md:-translate-y-4">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-on-tertiary-container text-on-tertiary px-4 py-1 rounded-full text-[12px] font-bold uppercase tracking-widest shadow-md">
+            Más Solicitado
+          </div>
+<h3 class="text-headline-md font-headline-md mb-2">Cocina Moderna</h3>
+<p class="text-body-md font-body-md text-on-primary/70 mb-6">Reforma estándar de hasta 10m²</p>
+<div class="mb-8 flex items-baseline gap-2">
+<span class="text-body-lg text-on-primary/70">Desde</span>
+<span class="text-headline-xl font-headline-xl font-bold">8.900€</span>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md">Mobiliario a medida (puertas lacadas)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md">Encimera de cuarzo o porcelánico</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md">Suelos laminados o porcelánicos</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md">Renovación instalaciones (no electrodomésticos)</span>
+</li>
+</ul>
+<button class="w-full bg-on-tertiary-container text-on-tertiary py-3 rounded-full font-label-sm text-label-sm uppercase hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors shadow-md">
+            Solicitar presupuesto
+          </button>
+</div>
+<!-- Tier 3 -->
+<div class="bg-surface rounded-2xl p-8 shadow-sm flex flex-col relative border border-outline-variant/20">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Integral Vivienda</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Pisos estándar de 70-90m²</p>
+<div class="mb-8 flex items-baseline gap-2">
+<span class="text-body-lg text-on-surface-variant">Desde</span>
+<span class="text-headline-xl font-headline-xl font-bold text-primary-container">35.000€</span>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Proyecto de interiorismo incluido</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Redistribución de espacios</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Renovación total de instalaciones</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">check</span>
+<span class="text-body-md text-on-surface">Gestión de licencias de obra</span>
+</li>
+</ul>
+<button class="w-full border-2 border-primary-container text-primary-container py-3 rounded-full font-label-sm text-label-sm uppercase hover:bg-primary-container hover:text-on-primary transition-colors">
+            Solicitar presupuesto
+          </button>
+</div>
+</div>
+<p class="text-center text-label-sm text-on-surface-variant mt-8">* Precios sin IVA. El presupuesto final dependerá de las calidades seleccionadas y el estado actual del inmueble.</p>
+</div>
+</section>
+<!-- 8. Coverage Map -->
+<section class="w-full relative h-[500px] bg-surface-container">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-70" data-location="Barcelona metropolitan area, Spain" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYnw0SHCGuFtvRj_LmQ1LUWL0nrvVg8oFjzu-qUBLeC2GdicA9Z7P7rfeZFQwG5wxZC2BbYmGOtGghCSDsRNg9n6TcDJs2Yv15xvG-GraTyLzdvn6Z74NGX9sLT5qKKAaqnWbgCm6YC-to2HNg4P3roqzx6LD_e5SiR56ynsVvHjO-XNyutE0cQzbqc4pFh3QTHEQjMmIJVGlrzqGfIbJQbmZQjrt4k7EcfV38aSptvsjJRCFa3m2J')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="relative z-10 w-full h-full max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-end pb-24">
+<div class="bg-surface/90 backdrop-blur-md p-8 rounded-xl shadow-lg max-w-md border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">map</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Área de actuación</h3>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">
+          Realizamos reformas integrales en la ciudad de Barcelona y su área metropolitana, asegurando cercanía y respuesta rápida.
+        </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-label-sm text-on-surface">Barcelona Ciudad</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-label-sm text-on-surface">L'Hospitalet</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-label-sm text-on-surface">Badalona</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-label-sm text-on-surface">Sant Cugat</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-label-sm text-on-surface">Cornellà</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. FAQ -->
+<section class="w-full py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row gap-16">
+<div class="md:w-1/3">
+<span class="text-label-sm font-label-sm text-on-tertiary-container uppercase tracking-widest mb-4 block">Dudas frecuentes</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mb-6">Respuestas claras</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+            Sabemos que una reforma genera muchas preguntas. Aquí resolvemos las más habituales de nuestros clientes.
+          </p>
+</div>
+<div class="md:w-2/3 flex flex-col">
+<!-- FAQ 1 -->
+<div class="border-b border-outline-variant/30 py-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-headline-md font-headline-md text-primary-container text-lg md:text-xl">¿Cuánto tarda una reforma integral?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors">add</span>
+</div>
+<!-- Collapsed state content placeholder (in a real implementation this would toggle) -->
+</div>
+<!-- FAQ 2 -->
+<div class="border-b border-outline-variant/30 py-6 group cursor-pointer bg-secondary-container/10 -mx-4 px-4 rounded-lg">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-headline-md font-headline-md text-primary-container text-lg md:text-xl">¿Gestionáis los permisos de obra?</h4>
+<span class="material-symbols-outlined text-primary-container">remove</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant pr-8">
+              Sí, nos encargamos de tramitar todas las licencias de obras mayores o menores necesarias (comunicados, enterados) con el Ayuntamiento de Barcelona o el municipio correspondiente, para que tú no tengas que preocuparte de la burocracia.
+            </p>
+</div>
+<!-- FAQ 3 -->
+<div class="border-b border-outline-variant/30 py-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-headline-md font-headline-md text-primary-container text-lg md:text-xl">¿Se puede vivir en la casa durante la obra?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors">add</span>
+</div>
+</div>
+<!-- FAQ 4 -->
+<div class="border-b border-outline-variant/30 py-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-headline-md font-headline-md text-primary-container text-lg md:text-xl">¿Qué garantías ofrecéis sobre los trabajos?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors">add</span>
+</div>
+</div>
+<!-- FAQ 5 -->
+<div class="border-b border-outline-variant/30 py-6 group cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-headline-md font-headline-md text-primary-container text-lg md:text-xl">¿Cobraís por la primera visita y el presupuesto?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary-container transition-colors">add</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Final CTA -->
+<section class="w-full py-24 bg-surface-container-low border-t border-outline-variant/20" id="contacto">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="bg-surface rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+<!-- Form Side -->
+<div class="lg:w-3/5 p-8 md:p-16">
+<h2 class="text-headline-xl font-headline-xl text-on-surface mb-2">Solicita tu presupuesto</h2>
+<p class="text-body-md text-on-surface-variant mb-8">Rellena el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+<form class="flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface uppercase">Nombre y Apellidos</label>
+<input class="w-full bg-surface-container border-none rounded-lg p-4 text-body-md focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Ej. Joan García" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface uppercase">Teléfono</label>
+<input class="w-full bg-surface-container border-none rounded-lg p-4 text-body-md focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Ej. 600 000 000" type="tel">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface uppercase">Tipo de Reforma</label>
+<select class="w-full bg-surface-container border-none rounded-lg p-4 text-body-md focus:ring-2 focus:ring-primary focus:outline-none appearance-none cursor-pointer">
+<option>Reforma Integral</option>
+<option>Reforma de Baño</option>
+<option>Reforma de Cocina</option>
+<option>Local Comercial</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface uppercase">Cuéntanos un poco sobre tu proyecto</label>
+<textarea class="w-full bg-surface-container border-none rounded-lg p-4 text-body-md focus:ring-2 focus:ring-primary focus:outline-none resize-none" placeholder="Detalles, m2 aproximados, ubicación..." rows="4"></textarea>
+</div>
+<button class="bg-primary-container text-on-primary py-4 rounded-full font-label-sm text-label-sm uppercase hover:bg-primary transition-colors mt-2" type="button">
+              Enviar solicitud
+            </button>
+<p class="text-xs text-on-surface-variant text-center mt-2">Tus datos están seguros. Al enviar aceptas la política de privacidad.</p>
+</form>
+</div>
+<!-- Contact Side -->
+<div class="lg:w-2/5 bg-primary-container p-8 md:p-16 flex flex-col justify-center items-start text-on-primary relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-on-tertiary-container rounded-full blur-3xl opacity-20"></div>
+<h3 class="text-headline-lg font-headline-lg mb-6 relative z-10">¿Hablamos hoy mismo?</h3>
+<p class="text-body-lg text-on-primary/80 mb-12 relative z-10">
+            Si prefieres un trato más directo, escríbenos por WhatsApp o llámanos. Estamos listos para escuchar tu idea.
+          </p>
+<div class="flex flex-col w-full gap-4 relative z-10">
+<a class="w-full bg-[#25D366] text-white py-4 px-6 rounded-full font-label-sm text-label-sm uppercase flex items-center justify-center gap-3 hover:opacity-90 transition-opacity shadow-lg" href="#">
+<span class="material-symbols-outlined">chat</span>
+              WhatsApp Inmediato
+            </a>
+<a class="w-full border border-outline-variant/30 bg-surface/10 text-on-primary py-4 px-6 rounded-full font-label-sm text-label-sm uppercase flex items-center justify-center gap-3 hover:bg-surface/20 transition-colors backdrop-blur-sm" href="#">
+<span class="material-symbols-outlined">call</span>
+              +34 932 456 789
+            </a>
+</div>
+<div class="mt-16 flex flex-col gap-4 relative z-10">
+<div class="flex items-center gap-3 text-on-primary/70 text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+              Carrer de Mallorca, 250, 08008 Barcelona
+            </div>
+<div class="flex items-center gap-3 text-on-primary/70 text-sm">
+<span class="material-symbols-outlined text-lg">schedule</span>
+              Lunes - Viernes: 09h a 19h
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container text-on-surface-variant border-t border-outline-variant/30 py-16"><div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"><div class="space-y-6"><div class="flex items-center gap-unit"><img alt="Logo" class="h-8 w-auto grayscale brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKBU3VK4njr1eX0QYaH9DaJnoVHAakPrLm5NvKMlk2goGpzjIyIDc4y5U4I6g39Fx6oNneFIp1ubtHE43arcNsVigStGV1DdOM0ynXomjG3wvnaGcb2Y8pp8YtdLomk8uzt7YTDe5vSVx5A5-VX_rs5igdNRUtYZ0MgLwMgmx5mpmy81nVCRVDpCA2z-_DlFx8NObbh1z7D0ghJq_-FYrOisrf1FM3G9SxzxVGlcBkM8Pt2Eikjitm"><span class="font-headline-md text-headline-md text-on-surface">Renova BCN</span></div><p class="text-body-md font-body-md">Transformamos espacios con la esencia de Barcelona, combinando tradición y vanguardia técnica.</p><div class="flex gap-4"><span class="material-symbols-outlined cursor-pointer hover:text-on-ter-container">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-on-ter-container">photo_camera</span><span class="material-symbols-outlined cursor-pointer hover:text-on-ter-container">public</span></div></div><div><h4 class="font-headline-md text-on-surface mb-6">Servicios</h4><ul class="space-y-3 text-body-md font-body-md"><li class=""><a class="hover:text-primary" href="#">Reformas Integrales</a></li><li class=""><a class="hover:text-primary" href="#">Interiorismo</a></li><li class=""><a class="hover:text-primary" href="#">Cocinas y Baños</a></li><li class=""><a class="hover:text-primary" href="#">Fachadas</a></li></ul></div><div><h4 class="font-headline-md text-on-surface mb-6">Contacto</h4><ul class="space-y-3 text-body-md font-body-md flex flex-col"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Carrer de Mallorca, 250<br>08008 Barcelona</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">schedule</span> Lun - Vie: 09h - 19h</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> info@renovabcn.com</li></ul></div><div><h4 class="font-headline-md text-on-surface mb-6">Legal</h4><ul class="space-y-3 text-body-md font-body-md"><li class=""><a class="hover:text-primary" href="#">Aviso Legal</a></li><li class=""><a class="hover:text-primary" href="#">Privacidad</a></li><li class=""><a class="hover:text-primary" href="#">Cookies</a></li></ul></div></div><div class="border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-label-sm font-label-sm uppercase tracking-wider"><p class="">© 2024 RENOVA BARCELONA S.L. TODOS LOS DERECHOS RESERVADOS.</p><p class="">DISEÑO ARQUITECTÓNICO &amp; CONSTRUCCIÓN</p></div></div></footer>
+
+<!-- Modal genérico para Servicios y Proyectos -->
+<div class="rbcn-modal-overlay" id="rbcn-modal-overlay" onclick="if(event.target===this) closeRbcnModal()">
+<div class="rbcn-modal" id="rbcn-modal-content" role="dialog" aria-modal="true"></div>
+</div>
+
+<script>
+var SERVICES_DATA = {
+  banos: {
+    icon: 'bathtub',
+    title: 'Reformas de baños',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA2hCJVKN6EgpCvlQrAcA3rMDR-uuuIJJhrIWdY6LaydCDl429gypE-m0w4So6Vyl-dRjW-YyQRGECRQCOFeNV4D7fxPhvS2PIGEBhMTn7JJaVBqb1e8aYR-B4Do8R6RAl1pjTb74WfQbTiUniIwFK_pBu16Sl_iD72AeVZf9QWAvBNW4doMD4GRjU4PAjJ4-TOI49zN6Tj_BEFYop9IYZMGz4HOH42WaB1E4gChqq81CGhtucmK-8I',
+    desc: 'Renovamos baños completos con materiales duraderos y fáciles de mantener. Sustituimos bañeras antiguas por duchas de acceso fácil para ganar espacio y comodidad, y actualizamos fontanería, revestimientos e iluminación.',
+    bullets: ['Demolición y nueva fontanería/electricidad','Plato de ducha o bañera, mampara y grifería','Alicatados y pavimentos antideslizantes','Mueble de baño, sanitarios e iluminación LED'],
+    prices: [['Actualización puntual','500€ – 800€ /m²'],['Reforma completa','800€ – 1.100€ /m²'],['Baño de diseño confort','1.100€ – 2.000€ /m²']],
+    note: 'Un baño completo de tamaño medio suele moverse entre 3.800€ y 5.500€ según acabados.'
+  },
+  cocinas: {
+    icon: 'kitchen',
+    title: 'Reformas de cocinas',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnuPkFoZWpaUvfVhbzshsV-bZL9Sqm_xv3D_OImkbAVXan4DW-DcPXgFDVG8L_eLP_NRIxwywPpd4FLcE6CCxMSakXszRCgsuCBN7PKXVp5lJBn9oA-N4ppbbU51UBk-zRu3KdG_NtTrCf3z9r015LeK_caqJVy6xDvkPOhZzMMEqRZm3WSz4faOeozXFfyuOQLsXWf74PnV0BZ-9pAspSi_l_POYfb0aylab066meaCLk3NyMdywT',
+    desc: 'Desde retoques puntuales (pintura de muebles, cambio de azulejos) hasta una renovación completa con mobiliario nuevo, electrodomésticos, fontanería y electricidad integradas.',
+    bullets: ['Muebles a medida y encimera de cuarzo/porcelánico','Electrodomésticos integrados','Renovación de fontanería y electricidad','Suelos y revestimientos resistentes'],
+    prices: [['Cocina pequeña (~4m²)','desde 4.500€'],['Reforma estándar','450€ – 1.000€ /m²'],['Cocina de gama alta','hasta 20.000€']],
+    note: 'El presupuesto final depende de la superficie y las calidades elegidas.'
+  },
+  viviendas: {
+    icon: 'home',
+    title: 'Reformas de viviendas',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2AcJd04eSisq8Pi7FyEvk3OaZX0MrA13Mp2h4NM3-Pke9vmSAe7b7ZoaDfT2t9uG39vRYv01P7A8LbMLe6eR1kzD5_SaYDlPQxZNTXq7dVBPL39kxprX15KeG9K7cv1_HT7oPL6ABYVXd-uqaKK0cfEMvp-N1JbqnnJLNB_oKSaCFz9DcDk2Lgni-jJMj0lRrMq5_oNCsUVipSrgyaZR7v8oD0SZERFDB-IdTdU-0dOQMO2uOzH1I',
+    desc: 'Reforma integral de pisos, áticos y casas: redistribución de espacios, cambio de instalaciones, suelos, carpintería y acabados de principio a fin, con dirección de obra y gestión de licencias incluidas.',
+    bullets: ['Redistribución y proyecto de interiorismo','Renovación total de fontanería y electricidad','Cambio de ventanas y aislamiento','Suelos, pintura y carpintería'],
+    prices: [['Reforma parcial','220€ – 460€ /m²'],['Piso de 70m² aprox.','25.000€ – 32.000€'],['Piso de 90m² aprox.','32.000€ – 39.000€']],
+    note: 'Los importes son orientativos; cada vivienda se presupuesta tras la visita técnica.'
+  },
+  locales: {
+    icon: 'storefront',
+    title: 'Locales comerciales',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZOy8NO8w7M05QcMxNTBfipJaRI2rcfDUqTtXpCwxaLHsMvU_iJQM_sTpcciW43T00DB79pj-lJ4qE71F133agwv_IKC_CMQ0rv619HCj3BzNbRtaZXXifD2k2fbc7ztNFmH3WWxnLuXwAIRwe0hTVWN8hcVnVKjZC1bvx9VaYZGVC_cfk8da5Qif8wnYL-WJ3TLF3ms5b8r2qTIIp-1s1yWUbH7ljoDr5-pOJPCvJox65Qz8-HPE7',
+    desc: 'Acondicionamos locales, oficinas y lonjas para nuevos negocios, incluyendo cambios de uso, redes eléctricas, climatización y acabados a medida de cada marca.',
+    bullets: ['Asesoramiento en licencias y cambio de uso','Redes eléctricas, climatización y fontanería','Tabiquería y acabados a medida','Diseño e imagen del espacio comercial'],
+    prices: [['Puesta al día de oficina','desde 300€ /m²'],['Local a estrenar completo','500€ – 700€ /m²'],['Reforma media de local','24.000€ aprox.']],
+    note: 'El precio varía mucho según si se parte de un local ya acondicionado o de un espacio en bruto.'
+  },
+  rehabilitaciones: {
+    icon: 'architecture',
+    title: 'Rehabilitaciones',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAixl3tI2_delviZ0TFWmZEEDqZZpmSuTMLowHT54ER45m3Fm1SGW0xxrfRmnd35626u1XuYKt7sdswLVgL5mEh50sa5H1gVzaRhQp-S9jsoPC_DQbHUASLKmwnXBN8ilk-MKcKe5Ng8IwA2AnOiLhLNAPUDGQVM3x9u_3nn3IE85YBbEvZDAjUlW40xDSiJs3G21nWe79z5S93d3ql38suAjMJKnDVOWUgfXgaTGG4ZwRziBtAxYkl',
+    desc: 'Recuperamos edificios y fachadas antiguas conservando su estructura y carácter original, renovando por dentro instalaciones, aislamiento y confort.',
+    bullets: ['Restauración de fachada conservando su aspecto','Refuerzo estructural y de cimentación','Aislamiento térmico y acústico','Renovación interior completa'],
+    prices: [['Rehabilitación de fachada','~9.000€ / 100m²'],['Rehabilitación de edificio','40€ – 1.800€ /m²'],['Proyecto completo de edificio','35.000€ – 500.000€']],
+    note: 'El rango depende del estado del inmueble, su tamaño y la profundidad de la intervención.'
+  }
+};
+
+var PROJECTS_DATA = {
+  'atico-eixample': {
+    title: "Ático en L'Eixample",
+    desc: "Reforma integral de un ático orientado a maximizar la luz natural, recuperando molduras y suelos hidráulicos originales y abriendo la distribución hacia la terraza.",
+    before: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCmx1-BOFNCH9o0acw1YCsp3ex4B24cDCA13stCMw6mVwHFc60BCNgoYV06vBUjgovSff4UxkXGarHols976ku9pDmhXd_oXEnC8vFRYiL5JF9ISmd8XgwzYokvJYyEYeuQ5qVvtD3gAgj3N0xjEf-hUSUNhDM3DeK8e--wN32hyEcKcsBZa5VjzY5fTZEVdAQXoxnB1ov1nqmuu_zUVmL23ylsC2pud0GA0m0xfNnoCdEpKundrEre',
+    after: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBf5OqZS9ZTZSb_jwsgIL49pVdaxOBFZiaVAErtnrdmDMZ8ILuHTRyh6QlZvGkEwC7M4RS6x-slx3M87yWdJvpZ5tBVwHpCSsvjRcZllVSfMD31q_l0FXiBAbnFuowUT5_zQGP7bA0Ux9cOqz92K1daKsdJIC-frdB8kYwfEIBCx5_9xw5rJ21XxRgfEp7ZEy-zCeQuM6s_eWiC0ZLNwQJPxCs5R6ulPl41CAYlhZ_ip74OD8i41A5P',
+    zone: "L'Eixample, Barcelona", type: 'Reforma integral de vivienda'
+  },
+  'bano-sarria': {
+    title: 'Baño Spa Sarrià',
+    desc: 'Conversión de un baño anticuado en un espacio tipo spa con microcemento continuo, bañera exenta e iluminación LED cálida, priorizando accesibilidad y confort.',
+    before: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqX3RZa5XHdH43Wd0S9LLpqUJItg69zCbvuZV0NjodS8D1WImIQ3jv8Dr5Aa4TValn17m47ihZJd5brs06N3llsopRrTuqXOVuYADr1PrZ82QaA_AXQM5O0xe2v7RxF2MgJ3IuGxb_nqzvl-R3O65jSQU0UTSJq94EDwdq1aXRd6INpryZvoJUT9o_uQQ6pu_zcndAqFjNjvlwd76MZmEOQTxQh8gL1-mHVxnRErDiF7W8PYVKBUgq',
+    after: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1Qxy3uNIUN0SrXjiDXy8wD2piOOJp31amiENzsHRzQEBzDWDWmQMi-gm7QwK4rvIjO7e2nBzJhGQWoFSreqopqSg_hlgXjdPT5uoL-kmQZ-qtSMdgELISgmM2yQXXIJhqzZIqbxUHJfzp7gBTuNTNQg6er8-1o1rK4AvSbU9G9lNK5Rmht5z_hIcoDETb1ohmmy-mZJzKUgr4-qnvBgjNYCBw8UlImdyo5jOpqlRIh9U1HWLegYIt',
+    zone: 'Sarrià, Barcelona', type: 'Reforma integral de baño'
+  }
+};
+
+function openServiceModal(key){
+  var s = SERVICES_DATA[key];
+  if(!s) return;
+  var pricesHtml = s.prices.map(function(p){
+    return '<div class="rbcn-price-row"><span>'+p[0]+'</span><span class="font-semibold">'+p[1]+'</span></div>';
+  }).join('');
+  var bulletsHtml = s.bullets.map(function(b){
+    return '<li class="flex items-start gap-3"><span class="material-symbols-outlined text-on-tertiary-container mt-0.5" style="font-size:20px">check</span><span class="text-body-md text-on-surface">'+b+'</span></li>';
+  }).join('');
+  document.getElementById('rbcn-modal-content').innerHTML =
+    '<div class="relative h-56 bg-cover bg-center" style="background-image:url(\''+s.img+'\')">' +
+      '<button onclick="closeRbcnModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface/90 flex items-center justify-center shadow"><span class="material-symbols-outlined">close</span></button>' +
+      '<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>' +
+      '<div class="absolute bottom-4 left-6 flex items-center gap-3 text-white">' +
+        '<span class="material-symbols-outlined text-2xl">'+s.icon+'</span>' +
+        '<h3 class="text-headline-md font-headline-md">'+s.title+'</h3>' +
+      '</div>' +
+    '</div>' +
+    '<div class="p-6 md:p-8">' +
+      '<p class="text-body-md text-on-surface-variant mb-6">'+s.desc+'</p>' +
+      '<ul class="space-y-3 mb-6">'+bulletsHtml+'</ul>' +
+      '<h4 class="text-label-sm font-label-sm uppercase text-on-tertiary-container mb-2">Precios orientativos</h4>' +
+      '<div class="bg-surface-container rounded-lg px-4 mb-2">'+pricesHtml+'</div>' +
+      '<p class="text-xs text-on-surface-variant mb-6">'+s.note+'</p>' +
+      '<div class="flex flex-col sm:flex-row gap-3">' +
+        '<a href="https://wa.me/34600000000" class="flex-1 bg-on-tertiary-container text-on-tertiary py-3 rounded-full text-center text-label-sm font-label-sm uppercase flex items-center justify-center gap-2"><span class="material-symbols-outlined">chat</span>Pedir presupuesto</a>' +
+        '<a href="#contacto" onclick="closeRbcnModal()" class="flex-1 border border-primary-container text-primary-container py-3 rounded-full text-center text-label-sm font-label-sm uppercase">Ir al formulario</a>' +
+      '</div>' +
+    '</div>';
+  document.getElementById('rbcn-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openProjectModal(key){
+  var p = PROJECTS_DATA[key];
+  if(!p) return;
+  document.getElementById('rbcn-modal-content').innerHTML =
+    '<div class="relative">' +
+      '<button onclick="closeRbcnModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface/90 flex items-center justify-center shadow z-10"><span class="material-symbols-outlined">close</span></button>' +
+      '<div class="grid grid-cols-2">' +
+        '<div class="relative h-56 bg-cover bg-center" style="background-image:url(\''+p.before+'\')"><span class="absolute bottom-2 left-2 bg-surface/90 px-3 py-1 rounded-full text-label-sm font-label-sm uppercase">Antes</span></div>' +
+        '<div class="relative h-56 bg-cover bg-center" style="background-image:url(\''+p.after+'\')"><span class="absolute bottom-2 left-2 bg-on-tertiary-container text-on-tertiary px-3 py-1 rounded-full text-label-sm font-label-sm uppercase">Después</span></div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="p-6 md:p-8">' +
+      '<span class="text-label-sm font-label-sm uppercase text-on-tertiary-container">'+p.type+' · '+p.zone+'</span>' +
+      '<h3 class="text-headline-md font-headline-md text-on-surface mt-2 mb-4">'+p.title+'</h3>' +
+      '<p class="text-body-md text-on-surface-variant mb-6">'+p.desc+'</p>' +
+      '<a href="https://wa.me/34600000000" class="w-full bg-on-tertiary-container text-on-tertiary py-3 rounded-full text-center text-label-sm font-label-sm uppercase flex items-center justify-center gap-2"><span class="material-symbols-outlined">chat</span>Quiero un proyecto similar</a>' +
+    '</div>';
+  document.getElementById('rbcn-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRbcnModal(){
+  document.getElementById('rbcn-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeRbcnModal(); });
+
+// Resalta el enlace del menú correspondiente a la sección visible
+(function(){
+  var navLinks = document.querySelectorAll('nav a[data-path]');
+  var sections = Array.prototype.slice.call(navLinks).map(function(l){
+    return document.getElementById(l.getAttribute('data-path'));
+  }).filter(Boolean);
+  if(!sections.length || !('IntersectionObserver' in window)) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var link = document.querySelector('nav a[data-path="'+entry.target.id+'"]');
+      if(!link) return;
+      if(entry.isIntersecting){
+        navLinks.forEach(function(l){ l.classList.remove('text-on-tertiary-container','font-semibold','underline','underline-offset-8'); l.classList.add('text-on-surface-variant'); });
+        link.classList.add('text-on-tertiary-container','font-semibold','underline','underline-offset-8');
+        link.classList.remove('text-on-surface-variant');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(function(s){ observer.observe(s); });
+})();
+</script>
+</body></html>
